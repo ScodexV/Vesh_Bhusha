@@ -32,7 +32,7 @@ h6 {
 p {
     font-size: 16px;
     color: #465b52;
-    margin: 15px 0 20px 0;
+    margin: 10px 0 10px 0;
 }
 
 .section-p1 {
@@ -75,7 +75,7 @@ body {
 /* header start */
 
 #header {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
@@ -83,8 +83,14 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index: 999;
     position: sticky;
+    padding-bottom: 30px;
     top: 0;
     left: 0;
+}
+
+#header .top {
+    display: flex;
+    justify-content: space-between;
 }
 
 #navbar {
@@ -133,7 +139,7 @@ body {
 
 /* Home page */
 
-#female {
+/* #female {
     background-image: url("vb img/woman-white.jpg");
     height: 80vh;
     width: 100%;
@@ -144,9 +150,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-}
+} */
 
-#female h4 {
+/* #female h4 {
     padding-bottom: 15px;
 }
 
@@ -170,7 +176,7 @@ body {
 
 #female button:hover {
     color: rgb(0, 0, 0);
-}
+} */
 
 
 #feature {
@@ -178,6 +184,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: rgba(253, 229, 96, 0.181);
 }
 
 #feature .fe-box {
@@ -223,19 +230,74 @@ body {
     background-color: #fff2e5;
 }
 
+#board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-image: url("vb img/percentage.jpg");
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+}
+
 #product1 {
     text-align: center;
 }
 
-#product1 .pro-container {
+#product1 .sbanner {
     display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-image: url("vb img/Strip-1-New-Arrivals.jpg");
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
 }
 
+#product1 .sBanner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-image: url("vb img/Strip-1-Sale.jpg");
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#product1 .container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 100px;
+    padding-top: 20px;
+    /* justify-content: space-between; */
+    margin-left: 5px;
+}
+
+
+#product1 .pro-container {
+    display: flex;
+    padding-top: 20px;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    overflow: auto hidden;
+    scroll-snap-type: inline mandatory;
+    overscroll-behavior-inline: contain;
+
+}
+
+
 #product1 .pro {
-    width: 23%;
+    width: 25%;
     min-width: 250px;
     padding: 10px 12px;
     border: 1px solid #cce7d0;
@@ -245,16 +307,50 @@ body {
     margin: 15px 0;
     transition: 0.03s ease;
     position: relative;
+    overflow: hidden;
+    scroll-snap-align: start;
+
 }
 
 #product1 .pro:hover {
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.259);
 }
 
-#product1 .pro img {
+#product1 .pro .product-img {
     width: 100%;
     border-radius: 20px;
+    object-fit: cover;
+    transition: var(--transition-timing);
 }
+
+#product1 .pro .product-img.default {
+    position: relative;
+    z-index: 1;
+}
+
+#product1 .pro .product-img.hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+#product1 .pro:hover .product-img.hover {
+    opacity: 1;
+}
+
+#product1 .pro:hover .product-img.default {
+    opacity: 0;
+}
+
+#product1 .pro:hover .product-img {
+    transform: scale(0.99);
+}
+
+/* in customB.css */
+
+
 
 #product1 .pro .des {
     text-align: start;
@@ -301,6 +397,19 @@ body {
     right: 10px;
 }
 
+#board1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-image: url("vb img/percentage.jpg");
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
 #banner {
     display: flex;
     flex-direction: column;
@@ -314,22 +423,22 @@ body {
     background-position: center;
 }
 
-#banner h4 {
+#banner, #board, #board1 h4 {
     color: white;
     font-size: 26px;
 }
 
-#banner h2 {
+#banner, #board, #board1 h2 {
     color: rgb(0, 0, 0);
     font-size: 36px;
     padding: 10px 0;
 }
 
-#banner h2 span {
-    color: #ef3636;
+#banner, #board, #board1 h2 span {
+    color: #fff9f9;
 }
 
-#banner button:hover {
+#banner, #board, #board1 button:hover {
     background-color: #000;
     color: rgb(243, 181, 25);
 }
@@ -346,11 +455,12 @@ body {
     justify-content: center;
     align-items: flex-start;
     background-image: url("vb img/b1.jpg");
-    min-width: 630px;
-    height: 50vh;
+    min-width: 670px;
+    height: 45vh;
     background-size: cover;
     background-position: center;
     padding: 30px;
+    border-radius: 10px;
 }
 
 #sm-banner .banner-box2 {
@@ -394,20 +504,23 @@ body {
     justify-content: center;
     align-items: flex-start;
     background-image: url("vb img/b3.jpg");
-    min-width: 30%;
-    height: 30vh;
+    min-width: 32%;
+    height: 40vh;
     background-size: cover;
     background-position: center;
     padding: 20px;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 #banner3 .banner-box3 {
     background-image: url("vb img/b4.jpg");
+    border-radius: 10px;
 }
 
 #banner3 .banner-box4 {
     background-image: url("vb img/b5.jpg");
+    border-radius: 10px;
 }
 
 #banner3 h2 {
@@ -793,17 +906,17 @@ footer .copyright {
     font-size: 14px;
 }
 
-#contact-detail .map{
+#contact-detail .map {
     width: 55%;
     height: 400px;
 }
 
-#contact-detail .map iframe{
+#contact-detail .map iframe {
     width: 100%;
     height: 100%;
 }
 
-#form-detail{
+#form-detail {
     display: flex;
     justify-content: space-between;
     margin: 30px;
@@ -811,7 +924,7 @@ footer .copyright {
     border: 1px solid #e1e1e1;
 }
 
-#form-detail form{
+#form-detail form {
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -819,7 +932,7 @@ footer .copyright {
 }
 
 #form-detail form input,
-#form-detail form textarea{
+#form-detail form textarea {
     width: 100%;
     padding: 12px 15px;
     outline: none;
@@ -827,18 +940,19 @@ footer .copyright {
     border: 1px solid #e1e1e1;
 }
 
-#form-detail form button{
+#form-detail form button,
+#product1 .pro-container button {
     background: rgb(223, 181, 75);
     color: #222;
 }
 
-#form-detail .people div{
+#form-detail .people div {
     padding-bottom: 25px;
     display: flex;
     align-items: flex-start;
 }
 
-#form-detail .people div img{
+#form-detail .people div img {
     width: 65px;
     height: 65px;
     object-fit: cover;
@@ -846,13 +960,13 @@ footer .copyright {
     border-radius: 50%;
 }
 
-#form-detail .people div p{
+#form-detail .people div p {
     margin: 0;
     font-size: 13px;
     line-height: 25px;
 }
 
-#form-detail .people div p span{
+#form-detail .people div p span {
     display: block;
     color: #000;
     font-size: 16px;
@@ -862,84 +976,87 @@ footer .copyright {
 /* cart page */
 
 
-#cart{
+#cart {
     overflow-x: auto;
 }
 
-#cart table{
+#cart table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
     white-space: nowrap;
 }
 
-#cart table img{
+#cart table img {
     width: 70px;
 }
 
-#cart table td:nth-child(1){
+#cart table td:nth-child(1) {
     width: 100px;
     text-align: center;
 }
-#cart table td:nth-child(2){
+
+#cart table td:nth-child(2) {
     width: 150px;
     text-align: center;
 }
-#cart table td:nth-child(3){
+
+#cart table td:nth-child(3) {
     width: 250px;
     text-align: center;
 }
 
 #cart table td:nth-child(4),
 #cart table td:nth-child(5),
-#cart table td:nth-child(6){
+#cart table td:nth-child(6) {
     width: 150px;
     text-align: center;
 }
 
-#cart table td:nth-child(5) input{
+#cart table td:nth-child(5) input {
     width: 70px;
     padding: 10px 5px 10px 15px;
 }
 
-#cart table thead{
+#cart table thead {
     border: 1px solid #e2e9e1;
     border-left: none;
     border-right: none;
 }
 
-#cart table thead td{
+#cart table thead td {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 13px;
     padding: 18px 0;
 }
 
-#cart table tbody tr td{
+#cart table tbody tr td {
     padding-top: 15px;
 }
 
-#cart table tbody td{
+#cart table tbody td {
     font-size: 15px;
 }
 
-#cart-add{
+#cart-add {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 
-#coupon{
+#coupon {
     width: 50%;
     margin-bottom: 30px;
 }
 
 #coupon h3,
-#subtotal h3{
+#subtotal h3 {
     padding-bottom: 15px;
 }
-#coupon input{
+
+#coupon input {
     padding: 10px 20px;
     outline: none;
     width: 60%;
@@ -948,26 +1065,26 @@ footer .copyright {
 }
 
 #coupon button,
-#subtotal button{
+#subtotal button {
     background-color: rgb(223, 181, 75);
     color: #222;
     padding: 12px 20px;
 }
 
-#subtotal{
+#subtotal {
     width: 50%;
     margin-bottom: 30px;
     border: 1px solid #e2e9e1;
     padding: 30px;
 }
 
-#subtotal table{
+#subtotal table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 20px;
 }
 
-#subtotal table td{
+#subtotal table td {
     width: 50%;
     border: 1px solid #e2e9e1;
     padding: 10px;
@@ -1102,7 +1219,8 @@ footer .copyright {
     }
 
     #header {
-        padding: 10px 30px;
+        padding: 20px 30px;
+        height: 25vh;
     }
 
     h1 {
@@ -1113,10 +1231,10 @@ footer .copyright {
         font-size: 32px;
     }
 
-    #female {
+    /* #female {
         padding: 0 20px;
         background-position: 40%;
-    }
+    } */
 
     #feature {
         justify-content: space-between;
@@ -1127,8 +1245,21 @@ footer .copyright {
         margin: 0 0 15px 0;
     }
 
+    #product1 .container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        margin-left: -13px;
+    }
+
+    #product1 .pro-container{
+        gap: 2px;
+    }
+
+
     #product1 .pro {
-        width: 100%;
+        width: 15%;
+        min-width: 160px;
+        height: 60vh;
     }
 
     #banner {
