@@ -1247,8 +1247,8 @@ footer .copyright {
 
     #product1 .container{
         grid-template-columns: repeat(2, 1fr);
-        gap: 1px;
-        margin-left: -13px;
+        gap: 0px;
+        margin-left: -20px;
     }
 
     #product1 .pro-container{
